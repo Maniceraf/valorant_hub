@@ -8,7 +8,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 import 'package:valorant_hub/models/agent_models/agent_model.dart';
 import 'package:valorant_hub/screens/agent/agent_detail_page.dart';
-import 'package:valorant_hub/widgets/custom_snackbar.dart';
 
 class AgentListPage extends StatefulWidget {
   const AgentListPage({super.key});
