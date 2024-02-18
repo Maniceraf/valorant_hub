@@ -92,6 +92,14 @@ class AgentDetailPageState extends State<AgentDetailPage> {
         titleTextStyle: GoogleFonts.sora(
             color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
         centerTitle: true,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: const Icon(
+              Icons.arrow_back_outlined,
+              color: Colors.white,
+            )),
       ),
       body: FutureBuilder<AgentModel>(
         future: agent,

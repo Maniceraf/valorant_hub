@@ -8,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:http/http.dart' as http;
 import 'package:valorant_hub/models/agent_models/agent_model.dart';
 import 'package:valorant_hub/screens/agent/agent_detail_page.dart';
+import 'package:valorant_hub/widgets/custom_snackbar.dart';
 
 class AgentListPage extends StatefulWidget {
   const AgentListPage({super.key});
@@ -160,6 +161,24 @@ class AgentListPageState extends State<AgentListPage> {
       titleTextStyle: GoogleFonts.sora(
           color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
       centerTitle: true,
+      leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(
+            Icons.arrow_back_outlined,
+            color: Colors.white,
+          )),
+      actions: [
+        IconButton(
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(snackBar1);
+            },
+            icon: const Icon(
+              Icons.search,
+              color: Colors.white,
+            ))
+      ],
     );
   }
 
@@ -462,3 +481,27 @@ class AgentListPageState extends State<AgentListPage> {
     );
   }
 }
+
+final snackBar1 = SnackBar(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    content: Container(
+      padding: const EdgeInsets.all(10),
+      decoration: BoxDecoration(
+        color: Colors.redAccent[400],
+        boxShadow: const [
+          BoxShadow(
+            color: Color(0x19000000),
+            spreadRadius: 2.0,
+            blurRadius: 8.0,
+            offset: Offset(2, 4),
+          )
+        ],
+        borderRadius: BorderRadius.zero,
+      ),
+      child: Text(
+        "This feature is not yet developed",
+        style: GoogleFonts.sora(
+            color: Colors.white, fontSize: 14, fontWeight: FontWeight.bold),
+      ),
+    ));
